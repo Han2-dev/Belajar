@@ -1,3 +1,4 @@
+# Mendefinisikan fungsi
 def tambah(x, y):
     return x + y
 def kurang(x, y):
@@ -12,7 +13,7 @@ def bagi(x, y):
 
 def main():
     print("Kalkulator")
-    while True:
+    while True: # Untuk looping
         pilihan_op = input("Pilih operasi (+, -, *, /): ").strip()
         num1 = float(input("Masukkan angka pertama: ").strip())
         num2 = float(input("Masukkan angka kedua: ").strip())
@@ -27,6 +28,13 @@ def main():
         else:
             print("Input invalid")
         print(f"Hasil: {num1} {pilihan_op} {num2} = {hasil}")
-    
+        while True: # Loop validasi khusus input
+            n_loop = input("Ulang? (y/n): ").strip().lower()
+            if n_loop == 'y':
+                break # Keluar dari loop validasi lalu kembali ke loop utama
+            elif n_loop == 'n':
+                exit()
+            else:
+                print("Input invalid")
 if __name__ == "__main__":
     main()
